@@ -1,6 +1,6 @@
 {
     "name": "async-cpu-stats",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "main": "./dist/main.bundle.js",
     "types": "./types/main.d.ts",
     "files": [
