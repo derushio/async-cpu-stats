@@ -1,7 +1,11 @@
 {
-    "name": "node-ts-template",
-    "version": "1.0.0",
+    "name": "async-cpu-stats",
+    "version": "1.0.6",
     "main": "./dist/main.bundle.js",
+    "types": "./types/main.d.ts",
+    "files": [
+        "dist", "types"
+    ],
     "license": "MIT",
     "scripts": {
         "clean": "./scripts.sh clean",

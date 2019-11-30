@@ -1,19 +1,16 @@
-import 'webpack-node-externals';
 import * as sourceMapSupport from 'source-map-support';
 
 import * as _ from 'lodash';
 
-import { initServer } from './server';
+import cpuStats from 'cpu-stats';
 
-function initSourceMap() {
-    if (process.env.NODE_ENV === 'development') {
-        sourceMapSupport.install();
-        console.log('ENV_LOG:', 'SOURCE MAP ENABLED');
-    }
+async function asyncCpuStats() {
+    return await new Promise<CpuStatsResult[]>((resolve, reject) => {
+        cpuStats(1000, (e, results) => {
+            if (e) { reject(e); }
+            resolve(results);
+        });
+    });
 }
 
-async function main() {
-    initSourceMap();
-    await initServer();
-}
-main();
+export default asyncCpuStats;
